@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/body.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,7 +21,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 2;
 
   // List of widgets for each bottom navigation bar item
   final List<Widget> _pages = [
@@ -112,34 +113,9 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      body: _pages[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home, color:const Color.fromARGB(255, 17, 90, 0)),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search, color:const Color.fromARGB(255, 17, 90, 0)),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle, color: const Color.fromARGB(255, 17, 90, 0)),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.trolley, color: const Color.fromARGB(255, 17, 90, 0)),
-            label: 'Messages',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings, color: const Color.fromARGB(255, 17, 90, 0)),
-            label: 'Settings',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-      ),
+      body:
+      AppBody(),
+      
     );
   }
 }
